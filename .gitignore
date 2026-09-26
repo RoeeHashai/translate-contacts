@@ -1,0 +1,17 @@
+# Secrets
+.env
+grok_api_key.txt
+
+# Personal contact data (tests use inline, made-up contacts)
+*.csv
+*.vcf
+*.vcard
+*.tmp
+
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/
+build/
+dist/

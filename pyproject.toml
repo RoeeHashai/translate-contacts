@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "translate-contacts"
+dynamic = ["version"]
+description = "Convert Hebrew (and other non-Latin) contact names to how they'd be saved in an English phone, using an LLM."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+    "Topic :: Communications :: Telephony",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+translate-contacts = "translate_contacts.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "translate_contacts.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
